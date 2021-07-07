@@ -21,8 +21,8 @@
 #' @param ffly.dist The distance between fireflies. Can be defined as \code{par.dist=} in \code{opt_param}. Default is \code{'euclidean'}, 
 #' @param ffly.order The minkowski order of the \code{par.dist} if \code{par.dist='minkowski'}. Can be defined as \code{par.order=} in \code{opt_param}. Default is 2
 #' @param gamma distance scaling factor. Can be defined as \code{gamma} in \code{opt_param}. Default is 1.
-#' @param ffly.beta . attractiveness constant. Can be defined as \code{beta} in \code{opt_param}. Default is 1.
-#' @param ffly.alpha number of consecutive unchange to stop the iteration. Can be defined as \code{alpha=} in \code{opt_param}.
+#' @param ffly.beta Attractiveness constant. Can be defined as \code{beta} in \code{opt_param}. Default is 1.
+#' @param ffly.alpha Randomisation constant. Can be defined as \code{alpha=} in \code{opt_param}.
 #' @param r.chaotic weight in logistic chaotic between [0,4]. Can be used when \code{ei.distr='logchaotic'}. Can be defined as \code{chaos} in \code{opt_param}. Default is 4.
 #' @param m.chaotic mapping parameter in kent chaotic between [0,1]. Can be used when \code{ei.distr='kentchaotic'}. Can be defined as \code{map} in \code{opt_param}. Default is 0.7.
 #' @param ind.levy Levy distribution index for random walk. Can be used when \code{ei.distr='levy'}. Can be defined as \code{ind} in \code{opt_param}. Default is 1.
@@ -68,9 +68,9 @@
 #'                alpha=0.5,a=1.2,b=1.2,max.iter=1000,error=1e-6,randomN=10)
 #' ## tune the IFA parameter
 #' ifa_param <- c(vi.dist='uniform', ei.distr='logchaotic',
-#'						fa.same=10, npar=15, par.no=3, ffly.dist='minkowski', 
-#'            ffly.order=4, gamma=1, ffly.beta=1.5,
-#'            ffly.alpha=1, r.chaotic=4,update_type=4) 
+#'						fa.same=10, npar=15, par.no=3, par.dist='minkowski', 
+#'            par.order=4, gamma=1, beta=1.5,
+#'            alpha=1, chaos=4,update_type=4) 
 #' ##FGWC with IFA
 #' res2 <- fgwc(census2010,census2010pop,census2010dist,'ifa',param_fgwc,ifa_param)
 

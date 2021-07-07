@@ -79,9 +79,9 @@ ifafgwc(
 
 \item{gamma}{distance scaling factor. Can be defined as \code{gamma} in \code{opt_param}. Default is 1.}
 
-\item{ffly.beta}{. attractiveness constant. Can be defined as \code{beta} in \code{opt_param}. Default is 1.}
+\item{ffly.beta}{Attractiveness constant. Can be defined as \code{beta} in \code{opt_param}. Default is 1.}
 
-\item{ffly.alpha}{number of consecutive unchange to stop the iteration. Can be defined as \code{alpha=} in \code{opt_param}.}
+\item{ffly.alpha}{Randomisation constant. Can be defined as \code{alpha=} in \code{opt_param}.}
 
 \item{r.chaotic}{weight in logistic chaotic between [0,4]. Can be used when \code{ei.distr='logchaotic'}. Can be defined as \code{chaos} in \code{opt_param}. Default is 4.}
 
@@ -134,9 +134,9 @@ param_fgwc <- c(kind='v',ncluster=3,m=2,distance='minkowski',order=3,
                alpha=0.5,a=1.2,b=1.2,max.iter=1000,error=1e-6,randomN=10)
 ## tune the IFA parameter
 ifa_param <- c(vi.dist='uniform', ei.distr='logchaotic',
-					fa.same=10, npar=15, par.no=3, ffly.dist='minkowski', 
-           ffly.order=4, gamma=1, ffly.beta=1.5,
-           ffly.alpha=1, r.chaotic=4,update_type=4) 
+					fa.same=10, npar=15, par.no=3, par.dist='minkowski', 
+           par.order=4, gamma=1, beta=1.5,
+           alpha=1, chaos=4,update_type=4) 
 ##FGWC with IFA
 res2 <- fgwc(census2010,census2010pop,census2010dist,'ifa',param_fgwc,ifa_param)
 }
